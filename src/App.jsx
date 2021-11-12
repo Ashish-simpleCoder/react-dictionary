@@ -1,12 +1,14 @@
-import { Container, createTheme } from "@material-ui/core"
+import {lazy, Suspense} from 'react'
+import { Container, createTheme, Typography } from "@material-ui/core"
 import { makeStyles, ThemeProvider } from "@material-ui/styles"
 import axios from "axios"
 import { useEffect, useState } from "react"
 import dictionaryApi from "./Api/api"
-import Definitions from "./components/Definitions"
 import Dictionary from "./components/Dictionary"
 import Header from "./components/Header"
 import "./styles/index.css"
+
+const Definitions = lazy(()=>import("./components/Definitions"))
 
 export default function App(){
     const [toggleDark, settoggleDark] = useState(true);
@@ -16,7 +18,7 @@ export default function App(){
     const [lan, setLan] = useState('en')
 
     useEffect(()=>wordMeaning(lan,word,setMeanings),[word,lan])
-    // console.log(toggleDark)
+
 
     const darkTheme = createTheme({
         palette:{
@@ -41,8 +43,12 @@ export default function App(){
             <div  className={styles.x} style={{width:'100%',background:toggleDark? '#101317' : '#fff'}}>
                 <Container className={styles.container}>
                     <Header settoggleDark={settoggleDark} toggleDark={toggleDark}/>
+
                     <Dictionary lan={lan} setLan={setLan} word={word} setWord={setWord}/>
-                    { meanings && <Definitions meanings={meanings} word={word} lan={lan}/> }
+
+                    { meanings && <Suspense fallback={<h1>loading...</h1>}><Definitions meanings={meanings} word={word} lan={lan}/></Suspense> }
+
+                    { !meanings && <Typography variant='h3'>no result found.</Typography>}
                 </Container>
             </div>
         </ThemeProvider>
@@ -52,12 +58,14 @@ export default function App(){
 
 
 
-async function wordMeaning(lan = 'en', word = 'man', setMeanings){
+async function wordMeaning(lan, word, setMeanings){
     try{
+        if(!lan || !word) return
         const {data} = await axios.get(dictionaryApi(lan, word))
+        if(!data) {setMeanings(''); return}
         setMeanings(data)
     }catch(e){
-        console.log(e)
+        setMeanings('')
     }
 }
 

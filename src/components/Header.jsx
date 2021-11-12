@@ -13,7 +13,10 @@ export default function Header({settoggleDark, toggleDark}){
             <Container>
                 <Toolbar>
                     <Typography variant='h3' className={styles.title} >Dictionary</Typography>
-                    <Button variant='outlined' className={styles.button} onClick={()=>changeTheme(settoggleDark)}>Dark</Button>
+
+                    <Button variant='outlined' className={styles.button} onClick={()=>changeTheme(settoggleDark)}>
+                        {toggleDark ? 'Light Mode' : 'Dark Moment'}
+                    </Button>
                 </Toolbar>
             </Container>
         </AppBar>
@@ -36,9 +39,3 @@ const createStyle = makeStyles(()=>({
         height:'2rem'
     }
 }))
-const styles={
-    fontSize:'clamp(3rem,4rem,4vw)',
-    // textAlign:'center',
-    fontWeight:'300',
-    // color:'rgb(0,0,200)'
-}

@@ -4,10 +4,14 @@ import { makeStyles } from "@material-ui/styles";
 export default function Definitions({meanings, word, lan}){
     const styles = createStyles()
 
+
     return(
         <Container className={styles.container}>
+
             { meanings[0] && meanings[0].phonetics[0] && word && lan==='en' &&  <Audio audio={meanings[0].phonetics[0].audio}/> }
+
             {word === '' ? <CustomTypo/> : meanings.map(mean=>mean.meanings.map(item=>item.definitions.map((def,index)=><Output key={index} def={def} />)))}
+
         </Container>
     )
 }
@@ -15,21 +19,14 @@ export default function Definitions({meanings, word, lan}){
 
 const CustomTypo = () => <Typography variant='h5' color='secondary' style={{textAlign:'center',fontWeight:'100'}}>Just type in search-box to search meanings</Typography>
 
-// const Output = (def) => (<div>
-//                             <b>{def.definition}</b>
-//                             <hr/>
-//                             {
-//                                 def.example && <b>def.example</b>
-//                             }
-//                         </div>)
 
 
 function Output(def){
     return(
-        <div >
-            <Typography color='secondary' style={{padding:'1rem 0'}}>{def.def.definition}</Typography>
+        <div>
+            <Typography color='secondary' style={{padding:'1rem 0'}}><b>Meaning</b> : {def.def.definition}</Typography>
             {
-                def.def.example && <Typography color='secondary'  style={{padding:'0 0 1rem 0'}}>Example : {def.def.example}</Typography>
+                def.def.example && <Typography color='secondary'  style={{padding:'0 0 1rem 0'}}><b>Example</b> : {def.def.example}</Typography>
             }
             <hr/>
         </div>
