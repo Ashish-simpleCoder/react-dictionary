@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/react-dictionary/static/css/main.03193ec7.chunk.css",
-    "main.js": "/react-dictionary/static/js/main.a86d3865.chunk.js",
-    "main.js.map": "/react-dictionary/static/js/main.a86d3865.chunk.js.map",
+    "main.js": "/react-dictionary/static/js/main.4d23f0ce.chunk.js",
+    "main.js.map": "/react-dictionary/static/js/main.4d23f0ce.chunk.js.map",
     "runtime-main.js": "/react-dictionary/static/js/runtime-main.3323a6d7.js",
     "runtime-main.js.map": "/react-dictionary/static/js/runtime-main.3323a6d7.js.map",
     "static/js/2.13014418.chunk.js": "/react-dictionary/static/js/2.13014418.chunk.js",
@@ -10,6 +10,8 @@
     "static/js/3.82dca6fc.chunk.js": "/react-dictionary/static/js/3.82dca6fc.chunk.js",
     "static/js/3.82dca6fc.chunk.js.map": "/react-dictionary/static/js/3.82dca6fc.chunk.js.map",
     "index.html": "/react-dictionary/index.html",
+    "service-worker.js": "/react-dictionary/service-worker.js",
+    "service-worker.js.map": "/react-dictionary/service-worker.js.map",
     "static/css/main.03193ec7.chunk.css.map": "/react-dictionary/static/css/main.03193ec7.chunk.css.map",
     "static/js/2.13014418.chunk.js.LICENSE.txt": "/react-dictionary/static/js/2.13014418.chunk.js.LICENSE.txt"
   },
@@ -17,6 +19,6 @@
     "static/js/runtime-main.3323a6d7.js",
     "static/js/2.13014418.chunk.js",
     "static/css/main.03193ec7.chunk.css",
-    "static/js/main.a86d3865.chunk.js"
+    "static/js/main.4d23f0ce.chunk.js"
   ]
 }
