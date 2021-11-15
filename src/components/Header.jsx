@@ -12,10 +12,14 @@ export default function Header({settoggleDark, toggleDark}){
         <AppBar className={styles.header} position='static'>
             <Container>
                 <Toolbar>
-                    <Typography variant='h3' className={styles.title} >Dictionary</Typography>
+                    <Typography variant='h5' className={styles.title} >Dictionary</Typography>
 
-                    <Button variant='outlined' className={styles.button} onClick={()=>changeTheme(settoggleDark)}>
-                        {toggleDark ? 'Light Mode' : 'Dark Moment'}
+                    <Button
+                        variant='outlined'
+                        className={styles.button}
+                        onClick={()=>changeTheme(settoggleDark)}
+                    >
+                        {toggleDark ? 'Light Moment' : 'Dark Moment'}
                     </Button>
                 </Toolbar>
             </Container>
@@ -28,14 +32,15 @@ const createStyle = makeStyles(()=>({
     header:{
         width:'100%',
         flexDirection:'row',
-        height:'5rem',
+        height:'4rem',
         alignItems:'center',
     },
     title:{
         flex:1,
-        fontWeight:'200'
+        fontWeight:'100 !important'
     },
     button:{
-        height:'2rem'
+        height:'2rem',
+        width:'10rem'
     }
 }))

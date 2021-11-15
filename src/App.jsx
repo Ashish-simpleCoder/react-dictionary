@@ -11,7 +11,7 @@ import "./styles/index.css"
 const Definitions = lazy(()=>import("./components/Definitions"))
 
 export default function App(){
-    const [toggleDark, settoggleDark] = useState(true);
+    const [toggleDark, settoggleDark] = useState(false);
 
     const [meanings, setMeanings] = useState([])
     const [word, setWord] = useState('')
@@ -19,28 +19,12 @@ export default function App(){
 
     useEffect(()=>wordMeaning(lan,word,setMeanings),[word,lan])
 
-
-    const darkTheme = createTheme({
-        palette:{
-            type: toggleDark ? 'dark' : 'light',
-            primary:{
-                main:toggleDark ? '#101517' : '#fff',
-            },
-            secondary: {
-                main:toggleDark ? '#fff' : '#101317'
-            },
-            button:{
-                main: toggleDark ? '#fff' : '#000'
-            }
-          }
-        })
-
     const styles = createStyles()
 
     return(
         <>
-        <ThemeProvider theme={darkTheme}>
-            <div  className={styles.x} style={{width:'100%',background:toggleDark? '#101317' : '#fff'}}>
+        <ThemeProvider theme={darkTheme(toggleDark)}>
+            <div  className={styles.x} style={{width:'100%',background:toggleDark? '#102020' : '#fff'}}>
                 <Container className={styles.container}>
                     <Header settoggleDark={settoggleDark} toggleDark={toggleDark}/>
 
@@ -50,6 +34,7 @@ export default function App(){
 
                     { !meanings && <Typography variant='h3'>no result found.</Typography>}
                 </Container>
+
             </div>
         </ThemeProvider>
         </>
@@ -57,17 +42,17 @@ export default function App(){
 }
 
 
-
 async function wordMeaning(lan, word, setMeanings){
     try{
         if(!lan || !word) return
         const {data} = await axios.get(dictionaryApi(lan, word))
-        if(!data) {setMeanings(''); return}
+        if(!data) return setMeanings('')
         setMeanings(data)
     }catch(e){
         setMeanings('')
     }
 }
+
 
 const createStyles = makeStyles(()=>({
     container:{
@@ -80,3 +65,22 @@ const createStyles = makeStyles(()=>({
         paddingBottom:'3rem'
     }
 }))
+
+function darkTheme(toggleDark){
+    return(
+        createTheme({
+            palette:{
+                type: toggleDark ? 'dark' : 'light',
+                primary:{
+                    main:toggleDark ? '#102030' : '#fff',
+                },
+                secondary: {
+                    main:toggleDark ? '#fff' : '#101317'
+                },
+                button:{
+                    main: toggleDark ? '#fff' : '#000'
+                }
+            }
+        })
+    )
+}

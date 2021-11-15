@@ -1,20 +1,22 @@
 {
   "files": {
     "main.css": "/react-dictionary/static/css/main.03193ec7.chunk.css",
-    "main.js": "/react-dictionary/static/js/main.e1e08a5f.chunk.js",
-    "main.js.map": "/react-dictionary/static/js/main.e1e08a5f.chunk.js.map",
-    "runtime-main.js": "/react-dictionary/static/js/runtime-main.6d096e64.js",
-    "runtime-main.js.map": "/react-dictionary/static/js/runtime-main.6d096e64.js.map",
-    "static/js/2.b02d6044.chunk.js": "/react-dictionary/static/js/2.b02d6044.chunk.js",
-    "static/js/2.b02d6044.chunk.js.map": "/react-dictionary/static/js/2.b02d6044.chunk.js.map",
+    "main.js": "/react-dictionary/static/js/main.9cb6f91c.chunk.js",
+    "main.js.map": "/react-dictionary/static/js/main.9cb6f91c.chunk.js.map",
+    "runtime-main.js": "/react-dictionary/static/js/runtime-main.60af7cd6.js",
+    "runtime-main.js.map": "/react-dictionary/static/js/runtime-main.60af7cd6.js.map",
+    "static/js/2.3212231c.chunk.js": "/react-dictionary/static/js/2.3212231c.chunk.js",
+    "static/js/2.3212231c.chunk.js.map": "/react-dictionary/static/js/2.3212231c.chunk.js.map",
+    "static/js/3.7fd9fc30.chunk.js": "/react-dictionary/static/js/3.7fd9fc30.chunk.js",
+    "static/js/3.7fd9fc30.chunk.js.map": "/react-dictionary/static/js/3.7fd9fc30.chunk.js.map",
     "index.html": "/react-dictionary/index.html",
     "static/css/main.03193ec7.chunk.css.map": "/react-dictionary/static/css/main.03193ec7.chunk.css.map",
-    "static/js/2.b02d6044.chunk.js.LICENSE.txt": "/react-dictionary/static/js/2.b02d6044.chunk.js.LICENSE.txt"
+    "static/js/2.3212231c.chunk.js.LICENSE.txt": "/react-dictionary/static/js/2.3212231c.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.6d096e64.js",
-    "static/js/2.b02d6044.chunk.js",
+    "static/js/runtime-main.60af7cd6.js",
+    "static/js/2.3212231c.chunk.js",
     "static/css/main.03193ec7.chunk.css",
-    "static/js/main.e1e08a5f.chunk.js"
+    "static/js/main.9cb6f91c.chunk.js"
   ]
 }
